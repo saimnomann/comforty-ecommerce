@@ -11,6 +11,11 @@ export const projectId = assertValue(
   'pxyyukwd'
 )
 
+export const authToken=assertValue(
+  process.env.NEXT_PUBLIC_SANITY_AUTH_TOKEN,
+  "skz0bHcBI1BaF55jSHeDP70SdBwM6GFaak88e79cJtFs76bLKpEyBcT9tVJndCX2DmojzwlzS9FYJjPo1"
+
+)
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
     throw new Error(errorMessage)

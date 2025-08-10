@@ -1,4 +1,15 @@
+import { client } from "@/sanity/lib/client"
 import Image from "next/image"
+import Link from "next/link"
+import { IProduct } from "@/app/types"
+import ViewCollection from "@/(components)/ViewCollection/button"
+import CartToggleButton from "@/(components)/CartToggleButton/button"
+  const products:IProduct[]=await client.fetch(`*[_type=="products"][12...15]{
+     _id,
+    title,
+    "imageUrl": image.asset->url,
+    price,
+    }`)
 export default function About(){
     return(
         <main className="w-full">
@@ -8,7 +19,8 @@ export default function About(){
                     <h1 className="text-white font-bold text-[32px] font-sans">About Us - Comforty</h1>
                     <p className="text-white font-normal text-lg font-sans max-w-[460px] ">At Comforty, we believe that the right chair can transform your space and elevate your comfort. Specializing in ergonomic design, premium materials, and modern aesthetics, we craft chairs that seamlessly blend style with functionality. </p>
                 </div>
-                <button className="w-44 h-14 bg-[#F9F9F926] text-white font-sans font-normal text-base">View collection</button>
+               <ViewCollection/>
+               
                 </div>
                 <Image src={"/Image Block.png"} alt="Chair" width={619} height={478}/>
             </section>
@@ -40,6 +52,31 @@ export default function About(){
             <section className="w-[1110px] mx-48 my-40">
                 <div>
                     <h1 className="text-[#272343] font-sans text-[32px] font-semibold">Our Popular Products</h1>
+                    <div className="flex gap-x-20 pt-20">
+                        { 
+                        products.map((prod,i)=>{
+                            return(
+                                   <div key={i}>
+          
+                                      <div className="flex flex-col text-left">
+                  
+                          <Link href={`products/${prod._id}`}>                       
+                    <Image src={prod.imageUrl} alt="Products" width={312} height={312 } className="pb-2"/>
+                     </Link>
+         <div className="flex justify-between items-center">
+               <h6 className="text-[#007580] text-base font-normal font-sans">{prod.title}</h6>
+                   <CartToggleButton prodId={prod._id} prodPrice={prod.price}/>
+                 
+                     </div>
+                     <h6 className="text-[#272343] font-sans font-semibold text-lg">${prod.price}</h6>
+        </div>
+               
+                </div>
+                            )
+                        })
+                    }
+                        
+                    </div>
                 </div>
             </section>
         </main>

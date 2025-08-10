@@ -61,7 +61,7 @@ return(
         </section>
         <section className="w-[1130px] h-68 bg-[#F4F4F4] mx-48">
 <div className="flex gap-x-20 px-14 pt-26">
-    <div className="flex items-center ">
+    <div className="flex items-center gap-x-3">
         <Image src={"/trophy 1.png"} alt="trophy" width={60} height={60}/>
         <div className="flex flex-col"> 
             <h1 className="text-2xl font-sans font-semibold text-[#242424]">High Quality</h1>
@@ -69,7 +69,7 @@ return(
         </div>
     </div>
 
-  <div className="flex items-center ">
+  <div className="flex items-center gap-x-3">
         <Image src={"/guarantee.png"} alt="guarantee" width={60} height={60}/>
         <div className="flex flex-col"> 
             <h1 className="text-2xl font-sans font-semibold text-[#242424]">Warranty Protection</h1>
@@ -77,7 +77,7 @@ return(
         </div>
 </div>
 <div>
-  <div className="flex items-center ">
+  <div className="flex items-center gap-x-3">
         <Image src={"/customer-support.png"} alt="customer-support" width={60} height={60}/>
         <div className="flex flex-col"> 
             <h1 className="text-2xl font-sans font-semibold text-[#242424]">24 / 7 Support</h1>

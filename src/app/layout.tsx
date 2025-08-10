@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
+import { Toaster } from "@/components/ui/sonner"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,11 +58,26 @@ export default function RootLayout({
           </div>
           <nav className="h-[74px] bg-[#FFFFFF] flex justify-between px-48 items-center border-b border-b-gray-200">
             <ul className="flex text-[#636270] font-[inter] text-sm gap-x-8 ">
-              <li>Home</li>
-              <li>Shop</li>
-              <li>Product</li>
-              <li>Pages</li>
-              <li>About</li>
+              <li>
+              <Link href="/">
+               Home </Link>
+                </li>
+              <li>
+               <Link href="/products">
+                Products
+               </Link>
+                </li>
+              <li>
+               <Link href="/contact">
+                Contact
+               </Link>
+                </li>
+              <li>
+               <Link href="/about">
+                About
+               </Link>
+                </li>
+               
             </ul>
             <div className="flex gap-x-2">
               <p>
@@ -127,7 +144,7 @@ export default function RootLayout({
           </section>
           <section className="h-20 flex  border-t  border-t-gray-300 w-full justify-between py-10 px-48 items-center">
             <p className="text-[#9A9CAA] font-[inter] text-sm">
-              @ 2025 - Blogy - Designed & Develop by Saim
+              @ 2025 - Comforty - Designed & Develop by Saim
             </p>
             <span className="flex gap-x-2  items-center">
               <Image src={"/Group 11.png"} alt={"pic"} width={20}  height={20} className="w-5 h-5"/>
@@ -139,6 +156,7 @@ export default function RootLayout({
  
           </section>
         </footer>
+        <Toaster position="bottom-right"  closeButton/>
       </body>
     </html>
   );
