@@ -58,15 +58,15 @@ export default async function SuccessLayout({
                   <Image src={"/Twitter---Negative 1.png"} alt={"Twitter"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                   <Image src={"/Instagram 1.png"} alt={"Instagram"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                   <Image src={"/Pinterest---Negative 1.png"} alt={"Pinterest"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
-                  <Image src={"/Youtube---Negative-1.png"} alt={"/Youtube"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
+                  <Image src={"/Youtube.png"} alt={"/Youtube"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                 </span>
               </p>
             </section>
           <section className="">
-            <h1 className="font-[inter] text-sm text-[#9A9CAA] uppercase">
+            <h1 className="font-sans text-sm text-[#9A9CAA] uppercase">
               Category
             </h1>
-            <ul className="font-[inter] text-base text-[#272343] py-4 space-y-3  whitespace-nowrap w-max">
+            <ul className="font-sans text-base text-[#272343] py-4 space-y-3  whitespace-nowrap w-max">
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">Sofa</li>
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">ArmChair</li>
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">Wing Chair</li>
@@ -76,10 +76,10 @@ export default async function SuccessLayout({
             </ul>
           </section>
           <section className="">
-            <h1 className="text-[#9A9CAA] font-[inter] text-sm uppercase">
+            <h1 className="text-[#9A9CAA] font-sans text-sm uppercase">
               Support
             </h1>
-            <ul className="text-base text-[#272343] font-[inter] font-[400] whitespace-nowrap w-max space-y-3 py-4">
+            <ul className="text-base text-[#272343] font-sans font-[400] whitespace-nowrap w-max space-y-3 py-4">
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">Help & Support</li>
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">Terms & Conditions</li>
               <li className="hover:underline hover:text-[#007580] hover:cursor-pointer">Privacy Policy</li>
@@ -92,11 +92,11 @@ export default async function SuccessLayout({
               <input type="email" placeholder="Your Email" className="w-2xs h-11 border border-[#E1E3E5] rounded-lg p-3 text-base text-[#9A9CAA] "/>
                 <button type="submit" className="w-28 h-11 bg-[#029FAE] text-[#FFFFFF] text-base rounded-lg hover:cursor-pointer hover:scale-105">Subscribe</button>
             </form>
-            <p className="text-[#272343] text-[15px] font-[inter]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
+            <p className="text-[#272343] text-[15px] font-sans">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
           </section>
           </section>
           <section className="h-20 flex  border-t  border-t-gray-300 w-full justify-between py-10 px-48 items-center">
-            <p className="text-[#9A9CAA] font-[inter] text-sm">
+            <p className="text-[#9A9CAA] font-sans text-sm">
               @ 2025 - Comforty - Designed & Develop by Saim
             </p>
             <span className="flex gap-x-2  items-center">
