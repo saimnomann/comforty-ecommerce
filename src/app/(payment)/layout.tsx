@@ -58,7 +58,7 @@ export default async function SuccessLayout({
                   <Image src={"/Twitter---Negative 1.png"} alt={"Twitter"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                   <Image src={"/Instagram 1.png"} alt={"Instagram"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                   <Image src={"/Pinterest---Negative 1.png"} alt={"Pinterest"} width={16} height={16} className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
-                  <Image src={"/Youtube.png"} alt={"/Youtube"} width={16} height={16}  unoptimized className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
+                  <Image src={"/youtube.png"} alt={"Youtube"} width={16} height={16}className="hover:rounded-full hover:cursor-pointer hover:border hover:border-[#007580]" />
                 </span>
               </p>
             </section>
