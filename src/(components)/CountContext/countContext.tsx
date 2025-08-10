@@ -17,7 +17,7 @@ export function useCountContext(){
 export default  function CountProvider({children,user_Id}:{children:React.ReactNode,user_Id:string}) {
     const[count,setCount]=useState(0)
     useEffect(()=>{
-fetch(`${baseUrl}/api/cart?user_Id=${user_Id}`,{
+fetch(`/api/cart?user_Id=${user_Id}`,{
         method:"GET",
     })
 
