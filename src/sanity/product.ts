@@ -1,4 +1,4 @@
-export default{
+const Product={
     name:"products",
     title:"Products",
     type:"document",
@@ -16,6 +16,11 @@ export default{
         title:"Price Without Discount",
         type:"number",
 
+    },
+    {
+        name:"price_id",
+        title:"Price Id",
+        type:"string"
     },
     {
         name:"description",
@@ -53,3 +58,4 @@ export default{
         }
     }]
 }
+export default Product

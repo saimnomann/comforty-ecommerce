@@ -1,4 +1,4 @@
-export default{
+const faq={
     name:"faq",
     type:"document",
     title:"FAQ",
@@ -16,3 +16,4 @@ export default{
         title:"Logo"
     }]
 }
+export default faq

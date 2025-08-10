@@ -1,14 +1,15 @@
 "use client"
-import product from "@/sanity/product"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { toast } from "sonner"
-import { IProduct } from "@/app/types"
+import { useCountContext } from "../CountContext/countContext"
 interface AddToCartButton{
 prodId:string,
 prodPrice:number,
+uid?:string,
 }
-export default function CartToggleButton({prodId,prodPrice}:AddToCartButton){
+export default function CartToggleButton({prodId,prodPrice,uid}:AddToCartButton){
+    const {setCount}=useCountContext()
     const [InCart,setInCart]=useState(false)
     const  handleSubmit=async()=>{
 if(!InCart){
@@ -18,14 +19,21 @@ if(!InCart){
     body:JSON.stringify({
     product_Id:prodId,
     price:prodPrice,
-    
+    user_id:uid
 })
 }
 )
-setInCart(true)
+const data=await res.json()
+        if(res.status==409){
+            toast.error(data.Message)
+            return
+        }
 if(!res.ok){
     throw new Error("Unable to Add Product")
 }
+
+setInCart(true)
+setCount((prev)=>prev+1)
 toast.success("Item Added To Cart")
 }
 catch(err){
@@ -37,18 +45,22 @@ else{
     const res=await fetch("/api/cart",{
         method:"DELETE",
         body:JSON.stringify({
-            product_Id:prodId
+            id:prodId,
+            user_id:uid,
+
         })
     })
     if(!res.ok){
         throw new Error("Item Not Deleted")
     }
     setInCart(false)
+    setCount((prev)=>prev-1)
     toast.success("Item Removed From Cart")
     }
     catch(err){
         toast.error(`${err as string}`)
     }
+
 }
 }
 return(

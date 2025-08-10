@@ -7,6 +7,7 @@ _id:string,
   category:{
     title:string,
   }
+  price_id:string,
   tags:string[],
   inventory:number,
   imageUrl:string,
@@ -31,7 +32,18 @@ img:{
 }
 }
 export interface IProps{
-params:{
-        slug:string
-    }
+
+        params:{slug:string}
+  
+}
+export interface cartItem{
+    id:number,
+    prod_id:string
+    price:number,
+    title?:string,
+    imageUrl?:string,
+    quantity:number,
+    singlePrice:number,
+    user_id:string,
+    price_id?:string
 }

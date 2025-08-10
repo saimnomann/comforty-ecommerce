@@ -11,22 +11,24 @@ interface IFAQ{
     }
 }
 export default async function FAQ(){
-    const data:IFAQ[]=await client.fetch(
-        `*[_type=="faq"]{
-  question,
-  answer,
-  logo{
-    asset->{url}}
 
-}`)
+ const data:IFAQ[]=await client.fetch(
+        `*[_type=="faq"]{
+            question,
+            answer,
+            logo{
+    asset->{url}}
+    
+    }`)
+    
     return(
         <main className="w-full">
-            <section className=" flex flex-col items-center text-center mx-48 ">
-                <div className="space-y-4 pt-20"> 
-                    <h1 className="font-bold text-5xl text-[#333333]">Questions Looks Here</h1>
-                    <p className="font-normal text-md text-[#4F4F4F] ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the </p>
+            <section className=" flex flex-col items-center text-center lg:mx-48 ">
+                <div className="space-y-4 lg:pt-20"> 
+                    <h1 className="font-bold text-xl lg:text-5xl text-[#333333]">Questions Looks Here</h1>
+                    <p className="font-normal text-base text-[#4F4F4F] w-full ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the </p>
                 </div>
-                     <div className="grid grid-cols-2 my-20 gap-10 ">
+                     <div className="grid grid-cols-1 lg:grid-cols-2 my-20 gap-10 ">
                 {
                     data.map((item,i)=>{
                         return(
