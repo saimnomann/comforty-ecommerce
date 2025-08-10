@@ -9,12 +9,16 @@ export default function middleware(request: NextRequest) {
     const uid = uuid();
     response.cookies.set({
       name: "user_id",
+<<<<<<< HEAD
       path:"/",
       value: uid,
       secure:true,
       httpOnly:true,
       sameSite:"lax",
       maxAge:60*60*24*24
+=======
+      value: uid,
+>>>>>>> 51be33550fc21835d039357914ace5cd6b8b20c0
     });
   }
 
@@ -22,5 +26,9 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
+<<<<<<< HEAD
   matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
+=======
+  matcher: "/:path",
+>>>>>>> 51be33550fc21835d039357914ace5cd6b8b20c0
 };
